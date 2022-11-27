@@ -69,6 +69,8 @@ export default function MyBicycles() {
                         Bicycle Taken At : {bicycle.takenAt}
                       </Card.Text>
 
+
+                      {/* { !bicycle.isReturnRequested ?  */}
                       <Button onClick={(e) => {
                           
                           e.preventDefault();
@@ -80,7 +82,11 @@ export default function MyBicycles() {
                           dispatch(bicycleReturnRequest(bicycleInfro));
 
                       }}
-                       variant="primary">Return bicycle request</Button>
+                       variant="primary">Return bicycle request</Button> 
+                       {/* : 
+                       'Wait for approval from admin' 
+                       } */}
+                      
                     </Card.Body>
                   </Card>
                 ))}
