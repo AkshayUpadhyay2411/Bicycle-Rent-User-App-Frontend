@@ -14,3 +14,5 @@ export * from './bicycleReturnRequest.action';
 export * from './allReturnRequests.action';
 export * from './returnRequestAccept.action';
 export * from './returnRequestDecline.action';
+
+export * from './getAllRequestedBicycles.action';

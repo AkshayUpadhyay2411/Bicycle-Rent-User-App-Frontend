@@ -1,36 +1,34 @@
 // import { Button } from 'bootstrap'
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react' 
 import { Card, Col, Container, Row, Button, Form } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
-import { getMyBicycles , bicycleReturnRequest } from '../../actions';
-import Layout from '../../components/Layout'  
+import { getAllRequestedBicycles } from '../../actions';
+import Layout from '../../components/Layout' 
+
+export default function RequestedBicycles() {
  
-export default function MyBicycles() {
- 
-  const allTheMyBicycle = useSelector(state => state.allMyBicycle);
+  const allTheRequestedBicycle = useSelector(state => state.allRequestedBicycle);
 
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
-    dispatch(getMyBicycles());
+    dispatch(getAllRequestedBicycles());
   }, []);
 
-  const rendergetMyBicycle = () => {
+  const renderRequestedBicycle = () => {
 
-    let c = allTheMyBicycle.allMyBicycles.myBicyles;
+    let c = allTheRequestedBicycle.allRequestedBicycles.requestedBicycles;
 
     console.log(c.length); // array of elements
   }
 
-  
 
   return (
     
-    !allTheMyBicycle.allMyBicycles.myBicyles ?
-
-    <Layout>
-      <h1>Add your bicycles !!</h1>
-    </Layout>
+    !allTheRequestedBicycle.allRequestedBicycles.requestedBicycles ?
+      <Layout>
+        <h1> No Request Bicycles Yet !!</h1>
+      </Layout>
 
       :
       (
@@ -43,12 +41,12 @@ export default function MyBicycles() {
 
             <Col md={{ span: 6, offset: 3 }}>
 
-            <h1> Bicycles Rented </h1>
-            <br />
+              <h1> Bicycles Requested : </h1>
+
               {/* {renderPost()} */}
 
-              {allTheMyBicycle.allMyBicycles.myBicyles.map((bicycle) => (
-
+              {allTheRequestedBicycle.allRequestedBicycles.requestedBicycles.map((bicycle) => (
+                    
                     <Card style={{ width: '35rem', margin: '10px' }}>
                     <Card.Body>
                       <Card.Title> Bicycle Id : {bicycle._id} </Card.Title>
@@ -65,22 +63,19 @@ export default function MyBicycles() {
                         Bicycle Price Per Hour : {bicycle.pricePerHour}
                       </Card.Text>
 
-                      <Card.Text>
-                        Bicycle Taken At : {bicycle.takenAt}
-                      </Card.Text>
-
-                      <Button onClick={(e) => {
-                          
+                      {/* <Button onClick={(e) => {
+                        
                           e.preventDefault();
 
                           const bicycleInfro = {
                             bicycleId : bicycle._id
                           }
 
-                          dispatch(bicycleReturnRequest(bicycleInfro));
+                          dispatch(bicycleRequested(bicycleInfro));
 
                       }}
-                       variant="primary">Return bicycle request</Button>
+                       variant="primary">Rent this</Button> */}
+                       
                     </Card.Body>
                   </Card>
                 ))}

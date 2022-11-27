@@ -26,7 +26,10 @@ export default function Bicycles() {
   return (
     
     !allTheBicycle.allBicycles.bicycles ?
-      <h1>Add Bicycles !!</h1>
+      <Layout>
+        <h1>Add Bicycles !!</h1>
+      </Layout>
+
       :
       (
         
@@ -38,21 +41,30 @@ export default function Bicycles() {
 
             <Col md={{ span: 6, offset: 3 }}>
 
+              <h1> Bicycles Available : </h1>
+
               {/* {renderPost()} */}
 
               {allTheBicycle.allBicycles.bicycles.map((bicycle) => (
                     
                     <Card style={{ width: '35rem', margin: '10px' }}>
                     <Card.Body>
-                      <Card.Title> {bicycle.name} </Card.Title>
+                      <Card.Title> Bicycle Id : {bicycle._id} </Card.Title>
+
                       <Card.Text>
-                        {bicycle.description}
+                        Bicycle Name : {bicycle.name}
                       </Card.Text>
+
                       <Card.Text>
-                        {bicycle.pricePerHour}
+                        Bicycle Description : {bicycle.description}
                       </Card.Text>
+
+                      <Card.Text>
+                        Bicycle Price Per Hour : {bicycle.pricePerHour}
+                      </Card.Text>
+
                       <Button onClick={(e) => {
-                          
+                        
                           e.preventDefault();
 
                           const bicycleInfro = {
@@ -62,12 +74,12 @@ export default function Bicycles() {
                           dispatch(bicycleRequested(bicycleInfro));
 
                       }}
-                       variant="primary">Btn</Button>
+                       variant="primary">Rent this</Button>
                     </Card.Body>
                   </Card>
                 ))}
 
-              <h1>GAP</h1>
+              {/* <h1>GAP</h1>
               <Card style={{ width: '35rem', margin: '10px' }}>
                 <Card.Body>
                   <Card.Title>Card Title</Card.Title>
@@ -89,7 +101,7 @@ export default function Bicycles() {
                   </Card.Text>
                   <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
-              </Card>
+              </Card> */}
 
 
             </Col>

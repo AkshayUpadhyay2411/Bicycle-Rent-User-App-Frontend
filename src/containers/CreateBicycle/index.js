@@ -34,6 +34,10 @@ export default function CreateBicycle() {
 
         dispatch(createBicycleNowAction(bicycle));
 
+        setName('');
+        setDescription('');
+        setpricePerHour('');
+        
     }
 
     

@@ -34,10 +34,10 @@ export default function Signup() {
 
         dispatch(signup(user));
         
-        // setFirstName('');
-        // setLastName('');
-        // setEmail('');
-        // setPassword('');
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPassword('');
 
     }
 

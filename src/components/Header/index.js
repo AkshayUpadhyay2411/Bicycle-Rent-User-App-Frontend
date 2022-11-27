@@ -69,19 +69,25 @@ export default function Header(props) {
                     <Link to='/createBicycle' className='navbar-brand' > Create-Bicycle </Link>
                 </li>
 
-                <li>
+                {/* <li>
                     <Link to='/requests' className='navbar-brand' > All-Requests </Link>
+                </li> */}
+                
+                <li>
+                    <Link to='/requestedBicycles' className='navbar-brand' > Requested-Bicycles </Link>
                 </li>
 
                 <li>
-                    <Link to='/myBicycles' className='navbar-brand' > My-Bicycles </Link>
+                    <Link to='/myBicycles' className='navbar-brand' > Rented-Bicycles </Link>
                 </li>
 
                 
-                <li>
+                {/* <li>
                     <Link to='/returnRequests' className='navbar-brand' > Return-Requests </Link>
-                </li>
+                </li> */}
 
+                
+            
                 
 
                 

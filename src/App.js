@@ -25,8 +25,9 @@ import Bicycles from './containers/Bicycles';
 
 import AllRequests from './containers/Requests';
 import MyBicycles from './containers/MyBicycles';
-import AllReturnRequests from './containers/ReturnRequests'
+import AllReturnRequests from './containers/ReturnRequests';
 
+import RequestedBicycles from './containers/RequestedBicycles';
 
 function App() {
 
@@ -74,6 +75,7 @@ function App() {
           <Route path='/myBicycles' element={<MyBicycles />} />
 
           <Route path='/returnRequests' element={<AllReturnRequests />} />
+          <Route path='/requestedBicycles' element={ <RequestedBicycles /> } />
 
         </Routes>
  

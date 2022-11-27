@@ -28,6 +28,7 @@ import allReturnRequestsReducer from "./allReturnRequests.reducer";
 
 import returnRequestAcceptReducer from "./returnRequestAccept.reducer"
 import returnRequestDeclineReducer from "./returnRequestDecline.reducer"
+import allRequestedBicycleReducer from './getAllRequestedBicycles.reducer'
 
 const rootReducer = combineReducers({
     auth : authReducer,
@@ -50,8 +51,9 @@ const rootReducer = combineReducers({
     allReturnRequest : allReturnRequestsReducer,
 
     returnRequestAccept : returnRequestAcceptReducer,
-    returnRequestDecline : returnRequestDeclineReducer
-
+    returnRequestDecline : returnRequestDeclineReducer,
+    
+    allRequestedBicycle : allRequestedBicycleReducer
 })
 
 export default rootReducer;
